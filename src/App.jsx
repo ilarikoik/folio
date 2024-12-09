@@ -18,7 +18,7 @@ export default function App() {
       <About aos="fade-in"></About>
       <Projects aos="zoom-in-up"></Projects>
       <Historia aos="zoom-in-up"></Historia>
-      <Courses aos="flip-left"></Courses>
+      <Courses aos="zoom-in-up"></Courses>
       <Footer aos="fade-in"></Footer>
       {/*joku pieni hoveri ja ehkä kuvat tekstin tilalle ja nappi mist saa "listätietoja ja siin ois se teksti*/}
       {/*/OTA yhteyttä lomake*/}

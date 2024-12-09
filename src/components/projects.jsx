@@ -39,9 +39,9 @@ export default function Projects({ aos }) {
       {/* Grid layout, jossa responsiivisuus hallitaan Tailwindin avulla */}
       <div
         data-aos={aos}
-        className="flex flex-col justify-center items-center bg-olive"
+        className="flex flex-col justify-center items-center bg-slate-700 p-7"
       >
-        <h3 className="font-bold text-4xl p-3 text-custom-beige">Projektit</h3>
+        <h3 className="font-bold text-4xl p-1 text-custom-beige">Projektit</h3>
         <div className="flex justify-center items-center md:w-12/12 lg:w-10/12">
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:w-4/6 gap-6 p-5 justify-items-center">
             {projectData.map((project, index) => (

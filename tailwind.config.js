@@ -5,6 +5,8 @@ export default {
     extend: {
       colors: {
         "custom-beige": "#ECDFCC",
+        //"custom-beige": "#FFFF",
+        darkblue: "#171718",
         olive: "#697565",
       },
     },
