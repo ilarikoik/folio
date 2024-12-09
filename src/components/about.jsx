@@ -1,7 +1,7 @@
-export default function About() {
+export default function About({ aos }) {
   return (
     <>
-      <div className=" flex justify-center items-center">
+      <div data-aos={aos} className=" flex justify-center items-center">
         <section className=" h-fit flex flex-col justify-center items-center p-5 sm:flex-row lg:max-w-screen-lg ">
           <div
             className="border-10 h-60 w-48 bg-yellow-200 rounded-lg mb-5 sm:w-48 m-3"

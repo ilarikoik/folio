@@ -10,3 +10,7 @@
     rgba(236, 223, 204, 1) 67%
   );
 }
+
+.visible {
+  @apply opacity-100 scale-100;
+}
