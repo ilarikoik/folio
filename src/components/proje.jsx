@@ -69,7 +69,7 @@ export default function Proje({ aos }) {
                   <h1 className="font-bold text-4xl p-1 text-custom-beige">
                     {project.title}
                   </h1>
-                  <h1 className="text-xl p-1 text-custom-beige">
+                  <h1 className="text-xl text-custom-beige p-5">
                     {project.description}
                   </h1>
                   <div>
@@ -110,7 +110,7 @@ export default function Proje({ aos }) {
                   <h1 className="font-bold text-4xl p-1 text-slate-700">
                     {project.title}
                   </h1>
-                  <h1 className="text-xl p-1 text-slate-700">
+                  <h1 className="text-xl p-1 text-slate-700 p-5">
                     {project.description}
                   </h1>
                   <p
