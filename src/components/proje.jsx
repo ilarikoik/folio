@@ -1,5 +1,16 @@
 import { useState } from "react";
-import { Etusivu, suosikit, map, lentaja, stick } from "../assets"; // Käytä suhteellista polkua
+import {
+  Etusivu,
+  suosikit,
+  map,
+  lentaja,
+  stick,
+  news1,
+  news2,
+  news3,
+  news4,
+  news5,
+} from "../assets"; // Käytä suhteellista polkua
 
 // Voit käyttää kuvia näin:
 <img src={Etusivu} alt="Etusivu" />;
@@ -27,11 +38,11 @@ export default function Proje({ aos }) {
       img: lentaja,
     },
     {
-      title: "Projekti 3",
+      title: "Uuutiset",
       description:
-        "Kolmas projekti, joka toteutettiin jollain tavalla. Lisätään kuvaus ja linkki tähän.",
-      url: "https://github.com",
-      img: stick,
+        "Ensimmäinen tailwind kokeilu. Responsiivinen uutis sivusto jossa pystyy hakea omalla hakusanalla tai valmiiksi annetuilla. ",
+      url: "https://github.com/ilarikoik/newsTailwind",
+      img: [news4, news5],
     },
     {
       title: "Projekti 4 ",
@@ -62,7 +73,7 @@ export default function Proje({ aos }) {
             let side = index % 2 === 0;
             return side ? (
               <div
-                className="flex h-full w-full flex-row justify-between bg-slate-700 "
+                className="flex h-full w-full flex-row justify-around bg-slate-700 "
                 key={index}
               >
                 <div className="flex flex-col justify-center items-center w-3/5">
@@ -84,10 +95,15 @@ export default function Proje({ aos }) {
                 {Array.isArray(project.img) && project.img.length > 1 ? (
                   project.img.map((item, index) => {
                     return (
-                      <img
-                        src={item}
-                        style={{ width: 300, height: 450, margin: 3 }}
-                      ></img>
+                      <div className="flex flex-col m-3 bg-red-500">
+                        <img
+                          src={item}
+                          style={{
+                            width: "fit-content",
+                            height: 450,
+                          }}
+                        ></img>
+                      </div>
                     );
                   })
                 ) : (
@@ -110,7 +126,7 @@ export default function Proje({ aos }) {
                   <h1 className="font-bold text-4xl p-1 text-slate-700">
                     {project.title}
                   </h1>
-                  <h1 className="text-xl p-1 text-slate-700 p-5">
+                  <h1 className="text-xl  text-slate-700 p-5">
                     {project.description}
                   </h1>
                   <p
