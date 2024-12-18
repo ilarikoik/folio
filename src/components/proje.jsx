@@ -10,6 +10,10 @@ import {
   news3,
   news4,
   news5,
+  bgl2,
+  blg5,
+  bgl4,
+  blg1,
 } from "../assets"; // Käytä suhteellista polkua
 
 // Voit käyttää kuvia näin:
@@ -29,6 +33,7 @@ export default function Proje({ aos }) {
         "Selaa elokuvia eri hakujen perusteella. Sovelluksessa myös pystyy tallentamaan omiin suosikkeihin ja arvioida elokuvia samalla tai lisätä katselulistalle. Myös teatterit oman sijainnil perusteella löytyvät helposti. Yksilötyö.",
       url: "https://github.com/ilarikoik/mobiiliprojekti",
       img: [Etusivu, suosikit, map],
+      lang: "React Native, SQLite",
     },
     {
       title: "Lentäjät",
@@ -36,6 +41,7 @@ export default function Proje({ aos }) {
         "React sekä javalla toteutettu sovellus harraste lentäjille. Sivulla näkyy helposti kaikki lentäjille tarvittavat tiedot nopeasti. Oman lentokentän tiedot voi lisätä jos siellä on laite mikä paikantaa tuulen nopeuden ja muut tiedot. Ryhmätyö.",
       url: "https://github.com/Ryhma-RED-Ohjelmistoprojekti-2/Weatherapp-backend",
       img: lentaja,
+      lang: "React JavaScript, Java, SQL",
     },
     {
       title: "Uuutiset",
@@ -43,21 +49,29 @@ export default function Proje({ aos }) {
         "Ensimmäinen tailwind kokeilu. Responsiivinen uutis sivusto jossa pystyy hakea omalla hakusanalla tai valmiiksi annetuilla. ",
       url: "https://github.com/ilarikoik/newsTailwind",
       img: [news4, news5],
+      lang: "React JavaScript, Tailwind",
     },
     {
-      title: "Projekti 4 ",
+      title: "Blog",
       description:
-        "Neljäs projekti, jossa toteutettiin jotain mielenkiintoista. Linkki tulee tänne.",
+        "Blogi ammattikorkeakoulu opiskelijoille. Aloita keskuteluja tai vastaa olemassa oleviin keskuisteluihin. Kirjaudu sisään Google avulla.",
+      url: "https://github.com/ilarikoik/blog",
+      img: [blg5, blg1],
+      lang: "React TypeScript, Tailwind, Firebase Database, Firebase autentikaatio",
+    },
+    {
+      title: "SpotifyWrapper but Better",
+      description: "Spotify wrapped mutta tarkempi ",
       url: "https://github.com",
       img: stick,
     },
-    {
-      title: "Projekti 5 ",
-      description:
-        "Neljäs projekti, jossa toteutettiin jotain mielenkiintoista. Linkki tulee tänne.",
-      url: "https://github.com",
-      img: stick,
-    },
+    // {
+    //   title: "Projekti 5 ",
+    //   description:
+    //     "Neljäs projekti, jossa toteutettiin jotain mielenkiintoista. Linkki tulee tänne.",
+    //   url: "https://github.com",
+    //   img: stick,
+    // },
   ];
 
   return (
@@ -73,23 +87,24 @@ export default function Proje({ aos }) {
             let side = index % 2 === 0;
             return side ? (
               <div
-                className="flex h-full w-full flex-row justify-around bg-slate-700 "
+                className="flex h-fit w-full flex-row justify-around bg-slate-700 "
                 key={index}
               >
                 <div className="flex flex-col justify-center items-center w-3/5">
-                  <h1 className="font-bold text-4xl p-1 text-custom-beige">
-                    {project.title}
+                  <h1 className=" text-2xl p-1 text-custom-beige">
+                    <strong>{project.title}</strong>
+                    <p className="text-lg text-custom-beige">{project.lang}</p>
                   </h1>
-                  <h1 className="text-xl text-custom-beige p-5">
+                  <h1 className="text-lg text-custom-beige p-5">
                     {project.description}
                   </h1>
-                  <div>
-                    <p
+                  <div className="flex flex-row justify-center items-center ">
+                    <button
                       onClick={() => handleRedirect(project.url)}
-                      className="w-fit h-fit p-2 bg-slate-700 border-custom-beige border-2 text-custom-beige rounded-md mt-10 flex justify-end text-2xl cursor-pointer hover:bg-custom-beige hover:border-slate-700 hover:border-2 hover:text-slate-700 "
+                      className=" p-2 bg-slate-700 border-custom-beige border-2 text-custom-beige rounded-md text-md cursor-pointer hover:bg-custom-beige hover:border-slate-700 hover:border-2 hover:text-slate-700 mr-3"
                     >
                       Github
-                    </p>
+                    </button>
                   </div>
                 </div>
                 {Array.isArray(project.img) && project.img.length > 1 ? (
@@ -100,7 +115,7 @@ export default function Proje({ aos }) {
                           src={item}
                           style={{
                             width: "fit-content",
-                            height: 450,
+                            height: 380,
                           }}
                         ></img>
                       </div>
@@ -109,29 +124,46 @@ export default function Proje({ aos }) {
                 ) : (
                   <img
                     src={project.img}
-                    style={{ width: 500, height: 400 }}
+                    style={{ width: 500, height: 350 }}
                   ></img>
                 )}
               </div>
             ) : (
               <div
-                className="flex h-full w-full flex-row bg-custom-beige"
+                className="flex h-full w-full flex-row bg-custom-beige p-2"
                 key={index}
               >
-                <img
-                  src={project.img}
-                  style={{ width: 550, height: 400 }}
-                ></img>
+                {Array.isArray(project.img) && project.img.length > 1 ? (
+                  project.img.map((item, index) => {
+                    return (
+                      <div className="flex flex-col m-3 bg-red-500">
+                        <img
+                          src={item}
+                          style={{
+                            width: "fit-content",
+                            height: 380,
+                          }}
+                        ></img>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <img
+                    src={project.img}
+                    style={{ width: 500, height: 350 }}
+                  ></img>
+                )}
                 <div className="flex flex-col justify-center items-center w-3/5">
-                  <h1 className="font-bold text-4xl p-1 text-slate-700">
-                    {project.title}
+                  <h1 className=" text-2xl p-1 text-slate-700">
+                    <strong>{project.title}</strong>
+                    <p className="text-lg text-slate-700">{project.lang}</p>
                   </h1>
-                  <h1 className="text-xl  text-slate-700 p-5">
+                  <h1 className="text-lg  text-slate-700 p-5">
                     {project.description}
                   </h1>
                   <p
                     onClick={() => handleRedirect(project.url)}
-                    className="w-fit h-fit p-2 bg-custom-beige border-slate-700 border-2 text-slate-700 rounded-md mt-10 flex justify-end text-2xl cursor-pointer hover:bg-slate-700 hover:border-custom-beige hover:border-2 hover:text-custom-beige "
+                    className="w-fit h-fit p-2 bg-custom-beige border-slate-700 border-2 text-slate-700 rounded-md mt-5 flex justify-end text-md cursor-pointer hover:bg-slate-700 hover:border-custom-beige hover:border-2 hover:text-custom-beige "
                   >
                     Github
                   </p>
