@@ -17,7 +17,7 @@ export default function About({ aos }) {
             Haaga-Heliassa, erikoistuen ohjelmistokehitykseen.
             <br />
             <br />
-            React/React Native, Java, SQL
+            React/React Native,Javascript, Typescript, Java, SQL
           </p>
         </section>
       </div>

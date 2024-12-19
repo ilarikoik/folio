@@ -30,7 +30,7 @@ export default function Proje({ aos }) {
     {
       title: "Leffa",
       description:
-        "Selaa elokuvia eri hakujen perusteella. Sovelluksessa myös pystyy tallentamaan omiin suosikkeihin ja arvioida elokuvia samalla tai lisätä katselulistalle. Myös teatterit oman sijainnil perusteella löytyvät helposti. Yksilötyö.",
+        "Selaa elokuvia eri hakujen perusteella. Sovelluksessa myös pystyy tallentamaan omiin suosikkeihin ja arvioida elokuvia samalla tai lisätä katselulistalle. Myös teatterit oman sijainnil perusteella löytyvät helposti.",
       url: "https://github.com/ilarikoik/mobiiliprojekti",
       img: [Etusivu, suosikit, map],
       lang: "React Native, SQLite",
@@ -38,7 +38,7 @@ export default function Proje({ aos }) {
     {
       title: "Lentäjät",
       description:
-        "React sekä javalla toteutettu sovellus harraste lentäjille. Sivulla näkyy helposti kaikki lentäjille tarvittavat tiedot nopeasti. Oman lentokentän tiedot voi lisätä jos siellä on laite mikä paikantaa tuulen nopeuden ja muut tiedot. Ryhmätyö.",
+        "React sekä javalla toteutettu sovellus harraste lentäjille. Sivulla näkyy helposti kaikki lentäjille tarvittavat tiedot nopeasti. Oman lentokentän tiedot voi lisätä jos siellä on laite mikä paikantaa tuulen nopeuden ja muut tiedot.",
       url: "https://github.com/Ryhma-RED-Ohjelmistoprojekti-2/Weatherapp-backend",
       img: lentaja,
       lang: "React JavaScript, Java, SQL",
@@ -46,7 +46,7 @@ export default function Proje({ aos }) {
     {
       title: "Uuutiset",
       description:
-        "Ensimmäinen tailwind kokeilu. Responsiivinen uutis sivusto jossa pystyy hakea omalla hakusanalla tai valmiiksi annetuilla. ",
+        "Responsiivinen uutis sivusto jossa pystyy hakea omalla hakusanalla tai valmiiksi annetuilla. ",
       url: "https://github.com/ilarikoik/newsTailwind",
       img: [news4, news5],
       lang: "React JavaScript, Tailwind",
